@@ -74,10 +74,10 @@ p{
     transition: transform 0.5s;
 }
 .card1{
-    background-image: url(Zero.jpg);
+    background-image: url(Vocab.png);
 }
 .card2{
-    background-image: url(11.jpg);
+    background-image: url(Weather.png);
 }
 .card3{
     background-image: url(11.jpg);
@@ -118,10 +118,10 @@ h5{
         transition: transform 0.5s;
     }
     .card1{
-    background-image: url(Zero.jpg);
+    background-image: url(Vocab.png);
 }
 .card2{
-    background-image: url(11.jpg);
+    background-image: url(Weather.png);
 }
     .card3{
         background-image: url(11.jpg);
