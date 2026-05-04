@@ -1,0 +1,25 @@
+.section-heading {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.projects-section {
+  display: grid;
+  gap: 18px;
+  padding-bottom: 24px;
+}
+
+.projects-list {
+  display: grid;
+  gap: 18px;
+}

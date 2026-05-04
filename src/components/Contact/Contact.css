@@ -1,0 +1,47 @@
+.contact {
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+}
+
+.contact-primary-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.contact-secondary-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 18px;
+  color: rgba(23, 20, 17, 0.72);
+  font-size: 0.98rem;
+}
+
+.contact-secondary-links a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.contact-secondary-links a:hover {
+  color: var(--text);
+}
+
+.contact-secondary-links a:focus-visible {
+  outline: 2px solid rgba(35, 35, 255, 0.75);
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .contact-primary-links {
+    gap: 10px;
+  }
+
+  .contact-secondary-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
