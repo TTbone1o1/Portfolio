@@ -1,10 +1,4 @@
 .contact {
-  display: grid;
-  gap: 20px;
-  justify-items: center;
-}
-
-.contact-primary-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -36,10 +30,6 @@
 }
 
 @media (max-width: 720px) {
-  .contact-primary-links {
-    gap: 10px;
-  }
-
   .contact-secondary-links {
     flex-direction: column;
     gap: 10px;

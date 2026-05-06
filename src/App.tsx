@@ -7,6 +7,7 @@ import {
 } from 'react'
 import Button from './components/Button/Button'
 import Contact from './components/Contact/Contact'
+import Footer from './components/Footer/Footer'
 import Name from './components/Name/Name'
 import Projects from './components/Projects/Projects'
 import {
@@ -361,15 +362,12 @@ function App() {
         <section className="name-layer" aria-label="Introduction">
           <div className="name-block">
             <Name>{displayName}</Name>
-            <Contact
-              primaryLinks={primaryLinks}
-              resumeHref={resumeHref}
-              contactDetails={contactDetails}
-            />
+            <Contact contactDetails={contactDetails} />
           </div>
         </section>
 
         <Projects projects={projects} />
+        <Footer primaryLinks={primaryLinks} resumeHref={resumeHref} />
       </div>
 
       {phase === 'open' && (
