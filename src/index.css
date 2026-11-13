@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f5f1ea;
-  --text: #171411;
+  --bg: #282828;
+  --text: #fffffe;
   --display:
     'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', 'URW Palladio L',
     Georgia, serif;
