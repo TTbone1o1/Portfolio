@@ -28,7 +28,7 @@ function NameReveal() {
       const start = { x: -padding, y: -padding }
       const end = { x: bounds.width + padding, y: bounds.height + padding }
       const drag = smooth(clamp((elapsed - 950) / 1000))
-      const release = smooth(clamp((elapsed - 2070) / 420))
+      const release = smooth(clamp((elapsed - 2070) / 650))
       const fade = 1 - smooth(clamp((elapsed - 2130) / 480))
       let x = start.x + (end.x - start.x) * drag
       let y = start.y + (end.y - start.y) * drag
@@ -56,15 +56,15 @@ function NameReveal() {
       // The text's clipping rectangle uses the same moving corner as the box.
       set('--clip-right', Math.max(0, bounds.width - (start.x + (end.x - start.x) * drag)))
       set('--clip-bottom', Math.max(0, bounds.height - (start.y + (end.y - start.y) * drag)))
-      set('--cursor-x', x + release * 22)
-      set('--cursor-y', y + release * 12)
-      set('--cursor-opacity', elapsed < 200 ? 0 : fade, '')
+      set('--cursor-x', x + release * (window.innerWidth - bounds.left + 45 - end.x))
+      set('--cursor-y', y + release * 70)
+      set('--cursor-opacity', elapsed < 200 ? 0 : 1, '')
       set('--selection-opacity', elapsed >= 950 ? fade : 0, '')
       // Scaling around SVG (0,0) preserves the exact pointer hotspot.
       const press = smooth(clamp((elapsed - 900) / 50))
       set('--cursor-scale', 1 - 0.08 * press * (1 - release), '')
 
-      if (elapsed < 2610 && !motion.matches) frame = requestAnimationFrame(tick)
+      if (elapsed < 2720 && !motion.matches) frame = requestAnimationFrame(tick)
       else root.dataset.complete = 'true'
     }
 
@@ -93,7 +93,12 @@ function NameReveal() {
 
   return (
     <h1 ref={rootRef} className="name-reveal" aria-label="Abraham May">
-      <span className="name-reveal__highlight" aria-hidden="true" />
+      <span className="name-reveal__highlight" aria-hidden="true">
+        <span className="name-reveal__corner name-reveal__corner--top-left" />
+        <span className="name-reveal__corner name-reveal__corner--top-right" />
+        <span className="name-reveal__corner name-reveal__corner--bottom-left" />
+        <span className="name-reveal__corner name-reveal__corner--bottom-right" />
+      </span>
       <span className="name-reveal__text" aria-hidden="true">Abraham May</span>
       <svg
         className="name-reveal__cursor"
@@ -102,7 +107,7 @@ function NameReveal() {
         aria-hidden="true"
       >
         <path
-          d="M0 0L18 19.3Q18.5 20 17.6 20H11.1L15.1 28.6Q15.6 29.7 14.5 30.2L11.9 31.4Q10.8 31.9 10.3 30.8L6.4 22.2L1 27Q0 27.9 0 26.5Z"
+          d="M0 0L16.5 17.7Q18.6 20 15.5 20H13Q10.7 20 11.7 22.2L14.4 28Q15.7 30.8 12.9 31.5Q10.9 32 9.9 29.8L7.3 24Q6.4 22 4.8 23.5L2.6 25.5Q0 28 0 24.4Z"
           fill="currentColor"
           stroke="#fff"
           strokeWidth="1.75"

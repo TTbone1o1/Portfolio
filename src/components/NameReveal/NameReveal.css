@@ -1,6 +1,6 @@
 .name-reveal {
   --selection-blue: #3789ee;
-  --cursor-height: 32px;
+  --cursor-height: 24px;
   position: relative;
   isolation: isolate;
   width: max-content;
@@ -34,6 +34,20 @@
   opacity: var(--selection-opacity, 0);
   pointer-events: none;
 }
+
+.name-reveal__corner {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--selection-blue);
+  transform: translate(-50%, -50%);
+}
+
+.name-reveal__corner--top-left { left: 0; top: 0; }
+.name-reveal__corner--top-right { left: 100%; top: 0; }
+.name-reveal__corner--bottom-left { left: 0; top: 100%; }
+.name-reveal__corner--bottom-right { left: 100%; top: 100%; }
 
 .name-reveal__cursor {
   position: absolute;
