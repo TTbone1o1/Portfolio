@@ -11,6 +11,9 @@ function NameReveal() {
     const root = rootRef.current
     if (!root) return
 
+    const colors = ['#e45252', '#3789ee', '#8b5cf6', '#20a77b', '#ec8b2c', '#db4b9b', '#209eaf']
+    root.style.setProperty('--selection-blue', colors[Math.floor(Math.random() * colors.length)])
+
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
     let frame = 0
     let cancelled = false
